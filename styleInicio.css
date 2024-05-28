@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+}
+.navegacion {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 10px;
+    padding: 100px 0px;
+    padding-right: 7000px;
+    
+}
