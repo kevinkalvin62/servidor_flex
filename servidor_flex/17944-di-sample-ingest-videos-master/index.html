@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Ingest API Sample: Ingesting Videos (Legacy Ingest)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/source-code-pro" type="text/css"/>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <section class="bcls-section">
+  <h2 id="video_data">Video data</h2>
+
+  <p>This script expects a data set as a JSON array of objects like this:</p>
+
+  <p>Video data:<textarea id="videoData" class="bcls-code" style="height:20em;">[
+    {
+        "name": "Woodpecker",
+        "description": "A bird that hunts insects inside wood",
+        "url": "https://i.4cdn.org/v/1716907318013838.webm",
+        "reference_id": "Bird_Woodpecker.mp4",
+        "tags": ["bird", "air", "nature"]
+    },
+    {
+        "name": "Chickadee",
+        "description": "A small friendly bird",
+        "url": "https://i.4cdn.org/v/1716907318013838.webm",
+        "reference_id": "Bird_Chickadee.mp4",
+        "tags": ["bird", "air", "nature"]
+    },
+    {
+        "name": "Great Blue Heron",
+        "description": "Pair of great blue herons",
+        "url": "https://i.4cdn.org/v/1716907318013838.webm",
+        "reference_id": "greatblueheron.mp4",
+        "tags": ["bird", "air", "nature"]
+    },
+    {
+        "name": "Great Horned Owl",
+        "description": "Mother and child owls",
+        "url": "https://i.4cdn.org/v/1716907318013838.webm",
+        "reference_id": "greathornedowl.mp4",
+        "tags": ["bird", "air", "nature"]
+    }
+]</textarea></p>
+
+  <p>This is the actual data used in this sample. You could include other metadata fields, but you would need to modify the script a little to send those with the first API call. You'll also notice that these are risky values to use for reference ids, especially for a sample like this that will be run multiple times - but I am getting around the duplication issue by appending the current epoch time in milliseconds to whatever is in the data.</p>
+
+  <div class="form-wrapper">
+    <fieldset class="bcls-fieldset">
+      <legend>Inputs for Dynamic Ingest</legend>
+
+      <p>Account: (defaults to Brightcove sample account) <input id="account_id" type="text" value="" name="account_id" /></p>
+
+      <p>Client id: (defaults to Brightcove sample account) <input id="client_id" type="text" value="" name="client_id" /></p>
+
+      <p>Client secret: (defaults to Brightcove sample account) <input id="client_secret" type="text" value="" name="client_secret" /></p>
+
+      <p>Ingest profile: <select id="ingest_profile_display"></select><br /> or Custom Profile: <input id="custom_profile_display" type="text" value="" name="custom_profile_display" /> (you must use the name exactly as it appears in the Video Cloud system,
+        or the request will fail)</p>
+      <p><input id="di_Submit" class="bcls-button" type="submit" value="Start Ingest" /></p>
+      <p>Full request URL for the CMS API call:<br />
+        <textarea class="bcls-code" name="url" id="cms_url"></textarea> (automatically generated - for information only)</p>
+
+      <p>Full request URL for the DI API call:<br />
+        <textarea class="bcls-code" name="url" id="di_url"></textarea> (automatically generated - for information only)</p>
+
+    </fieldset>
+  </div>
+</section>
+
+<section class="bcls-section">
+  <h2 id="logger">Results Log</h2>
+
+  <pre class="line-numbers">
+<code id="response" class="language-json">Response will appear here...</code></pre>
+</section>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
