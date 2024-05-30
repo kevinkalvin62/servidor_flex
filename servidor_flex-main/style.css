@@ -1,0 +1,91 @@
+body{
+  background: url(imagenes/OIP.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+}
+.fondo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  text-align: center;
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 12PX;
+  padding: 10px 20px;
+  background: transparent;
+  backdrop-filter: blur(6px);
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.fondo h2{
+  font-size: 30px;
+  color: #fffefe;
+
+}
+.input{
+  position: relative;
+}
+.inputs input[type="email"],
+.inputs input[type="password"]{
+border-radius: 10px;
+background: transparent;
+margin: 15px;
+border: 2px solid rgb(255, 255, 255);
+width: 280px;
+height: 2px;
+padding: 20px 40px 20px 20px;
+backdrop-filter: blur(15px);
+}
+.inputs i{
+  position: absolute;
+  top: 50px;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgb(255, 255, 255);
+}
+input::placeholder{
+  color: rgb(255, 255, 255);
+}
+.inputs input[type="email"]:focus::placeholder,
+.inputs input[type="password"]:focus::placeholder{
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-in-out;
+  font-size: 14px;
+}
+.inputs input[type="email"] :not(:focus)::placeholder,
+.inputs input[type="password"]:not(:focus)::placeholder{
+  transform: translateY(0%);
+  transition: transform 0.2s ease-in-out;
+  font-size: 16px;
+}
+a.restaurar{
+  text-decoration: none;
+  position: relative;
+  color: rgb(255, 255, 255, 0.712)
+}
+a.restaurar:hover{
+  text-decoration: underline;
+  color: #fffffffd;
+}
+a.iniciareS{
+  text-decoration: none;
+  position: relative;
+  color: rgb(255, 255, 255, 0.712)
+}
+a.iniciareS:hover{
+  text-decoration: underline;
+  color: #fffffffd;
+}
+.fondo .boton{
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 45px;
+  width: 200px;
+  height: 30px;
+}
